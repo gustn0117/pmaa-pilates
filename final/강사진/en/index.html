@@ -11,6 +11,106 @@
     
     <!-- End of headStart -->
 <style>
+.pmaa-partners {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 25px 80px;
+  box-sizing: border-box;
+}
+.pmaa-partners-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+.pmaa-partners-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.pmaa-partners-sub {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pmaa-partners-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: #1a55f9;
+  flex-shrink: 0;
+}
+.pmaa-partners-label {
+  font-family: "Satoshi", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a4f54;
+  margin: 0;
+  letter-spacing: 0;
+}
+.pmaa-partners-title {
+  font-family: "Satoshi", "Noto Sans KR", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #18212d;
+  margin: 0;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+.pmaa-partners-grid {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pmaa-partner-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 48px 64px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  min-width: 220px;
+}
+.pmaa-partner-card:hover {
+  border-color: #1a55f9;
+  box-shadow: 0 8px 32px rgba(26, 85, 249, 0.1);
+  transform: translateY(-4px);
+}
+.pmaa-partner-flag img {
+  display: block;
+  width: 64px;
+  height: 48px;
+  border-radius: 6px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+.pmaa-partner-name {
+  font-family: "Satoshi", "Noto Sans KR", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #18212d;
+  letter-spacing: -0.01em;
+}
+@media (max-width: 809px) {
+  .pmaa-partners { padding: 80px 20px 60px; }
+  .pmaa-partners-inner { gap: 40px; }
+  .pmaa-partners-title { font-size: 32px; }
+  .pmaa-partners-grid { gap: 16px; width: 100%; }
+  .pmaa-partner-card { flex-direction: row; padding: 24px 32px; min-width: unset; width: 100%; box-sizing: border-box; justify-content: center; }
+  .pmaa-partner-flag img { width: 48px; height: 36px; }
+}
+@media (min-width: 810px) and (max-width: 1199px) {
+  .pmaa-partners-title { font-size: 40px; }
+  .pmaa-partner-card { padding: 40px 52px; }
+}
+</style>
+<style>
 footer.framer-wwtvs { width: 100% !important; }
 div:has(> footer.framer-wwtvs) { width: 100% !important; }
 div:has(> .ssr-variant > div:has(> footer.framer-wwtvs)) { width: 100% !important; }
@@ -2073,17 +2173,23 @@ div:has(> .ssr-variant > div:has(> footer.framer-wwtvs)) { width: 100% !importan
 	<!-- Start of bodyEnd -->
     
     <!-- End of bodyEnd -->
+
 <section class="pmaa-partners" id="pmaa-partners-section">
 <div class="pmaa-partners-inner">
+<div class="pmaa-partners-header">
+<div class="pmaa-partners-sub">
+<div class="pmaa-partners-dot"></div>
 <p class="pmaa-partners-label">Global Partnership</p>
+</div>
 <h2 class="pmaa-partners-title">International Agreements</h2>
+</div>
 <div class="pmaa-partners-grid">
 <div class="pmaa-partner-card">
-<span class="pmaa-partner-flag"><img src="/images/flag-au.svg" alt="Australia" width="48" height="36"></span>
+<span class="pmaa-partner-flag"><img src="/images/flag-au.svg" alt="Australia" width="64" height="48"></span>
 <span class="pmaa-partner-name">Australia</span>
 </div>
 <div class="pmaa-partner-card">
-<span class="pmaa-partner-flag"><img src="/images/flag-id.svg" alt="Indonesia" width="48" height="36"></span>
+<span class="pmaa-partner-flag"><img src="/images/flag-id.svg" alt="Indonesia" width="64" height="48"></span>
 <span class="pmaa-partner-name">Bali, Indonesia</span>
 </div>
 </div>
@@ -2093,7 +2199,6 @@ div:has(> .ssr-variant > div:has(> footer.framer-wwtvs)) { width: 100% !importan
 (function() {
   var section = document.getElementById('pmaa-partners-section');
   if (!section) return;
-  // Move section before footer after Framer hydrates
   function moveSection() {
     var footer = document.querySelector('footer.framer-wwtvs');
     if (footer) {
@@ -2102,13 +2207,11 @@ div:has(> .ssr-variant > div:has(> footer.framer-wwtvs)) { width: 100% !importan
       section.style.display = '';
     }
   }
-  // Run after Framer hydration
   if (document.readyState === 'complete') {
     setTimeout(moveSection, 500);
   } else {
     window.addEventListener('load', function() { setTimeout(moveSection, 500); });
   }
-  // Also observe for route changes (Framer client-side navigation)
   var observer = new MutationObserver(function() {
     if (!document.contains(section)) {
       document.body.appendChild(section);
