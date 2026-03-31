@@ -2073,5 +2073,50 @@ div:has(> .ssr-variant > div:has(> footer.framer-wwtvs)) { width: 100% !importan
 	<!-- Start of bodyEnd -->
     
     <!-- End of bodyEnd -->
+<section class="pmaa-partners" id="pmaa-partners-section">
+<div class="pmaa-partners-inner">
+<p class="pmaa-partners-label">Global Partnership</p>
+<h2 class="pmaa-partners-title">국제 협약</h2>
+<div class="pmaa-partners-grid">
+<div class="pmaa-partner-card">
+<span class="pmaa-partner-flag"><img src="/images/flag-au.svg" alt="Australia" width="48" height="36"></span>
+<span class="pmaa-partner-name">Australia</span>
+</div>
+<div class="pmaa-partner-card">
+<span class="pmaa-partner-flag"><img src="/images/flag-id.svg" alt="Indonesia" width="48" height="36"></span>
+<span class="pmaa-partner-name">Bali, Indonesia</span>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function() {
+  var section = document.getElementById('pmaa-partners-section');
+  if (!section) return;
+  // Move section before footer after Framer hydrates
+  function moveSection() {
+    var footer = document.querySelector('footer.framer-wwtvs');
+    if (footer) {
+      var container = footer.closest('.ssr-variant')?.parentElement || footer.parentElement;
+      if (container) container.parentElement.insertBefore(section, container);
+      section.style.display = '';
+    }
+  }
+  // Run after Framer hydration
+  if (document.readyState === 'complete') {
+    setTimeout(moveSection, 500);
+  } else {
+    window.addEventListener('load', function() { setTimeout(moveSection, 500); });
+  }
+  // Also observe for route changes (Framer client-side navigation)
+  var observer = new MutationObserver(function() {
+    if (!document.contains(section)) {
+      document.body.appendChild(section);
+    }
+    moveSection();
+  });
+  observer.observe(document.getElementById('main'), { childList: true, subtree: false });
+})();
+</script>
 </body>
 </html>
