@@ -2221,5 +2221,52 @@ div:has(> .ssr-variant > div:has(> footer.framer-wwtvs)) { width: 100% !importan
   observer.observe(document.getElementById('main'), { childList: true, subtree: false });
 })();
 </script>
+<script>
+(function() {
+  var SUPABASE_URL = 'https://api.hsweb.pics';
+  var SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNjQxNzY5MjAwLCJleHAiOjE3OTk1MzU2MDB9.pei5Gx1wqEkbcDs1CiHFuTWNuVRlcrG5dPmYdrAqDdY';
+
+  function hookForm() {
+    var forms = document.querySelectorAll('form');
+    forms.forEach(function(form) {
+      if (form.dataset.pmaaHooked) return;
+      var nameInput = form.querySelector('input[name="이름"]');
+      if (!nameInput) return;
+      form.dataset.pmaaHooked = '1';
+      form.addEventListener('submit', function(e) {
+        var name = form.querySelector('input[name="이름"]')?.value || '';
+        var email = form.querySelector('input[name="Email"]')?.value || '';
+        var phone = form.querySelector('input[name="연락처"]')?.value || '';
+        var message = form.querySelector('textarea[name="문의사항"]')?.value || '';
+        if (name && email) {
+          fetch(SUPABASE_URL + '/rest/v1/inquiries', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'apikey': SUPABASE_KEY,
+              'Authorization': 'Bearer ' + SUPABASE_KEY,
+              'Content-Profile': 'pmaa_pilates'
+            },
+            body: JSON.stringify({ name: name, email: email, phone: phone, message: message })
+          }).catch(function() {});
+        }
+      });
+    });
+  }
+
+  // Hook after Framer hydration
+  if (document.readyState === 'complete') {
+    setTimeout(hookForm, 1000);
+  } else {
+    window.addEventListener('load', function() { setTimeout(hookForm, 1000); });
+  }
+  // Re-hook on client-side navigation
+  var mainEl = document.getElementById('main');
+  if (mainEl) {
+    new MutationObserver(function() { setTimeout(hookForm, 500); })
+      .observe(mainEl, { childList: true, subtree: false });
+  }
+})();
+</script>
 </body>
 </html>
