@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://pmaaofficial.com/</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pmaaofficial.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pmaaofficial.com/en"/>
+  </url>
+
+  <url>
+    <loc>https://pmaaofficial.com/%EA%B5%90%EC%9C%A1%EC%9E%90%EA%B2%A9%EC%A6%9D%EA%B3%BC%EC%A0%95</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pmaaofficial.com/%EA%B5%90%EC%9C%A1%EC%9E%90%EA%B2%A9%EC%A6%9D%EA%B3%BC%EC%A0%95"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pmaaofficial.com/%EA%B5%90%EC%9C%A1%EC%9E%90%EA%B2%A9%EC%A6%9D%EA%B3%BC%EC%A0%95/en"/>
+  </url>
+
+  <url>
+    <loc>https://pmaaofficial.com/%EC%84%BC%ED%84%B0%EC%88%98%EC%97%85%EC%86%8C%EA%B0%9C</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pmaaofficial.com/%EC%84%BC%ED%84%B0%EC%88%98%EC%97%85%EC%86%8C%EA%B0%9C"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pmaaofficial.com/%EC%84%BC%ED%84%B0%EC%88%98%EC%97%85%EC%86%8C%EA%B0%9C/en"/>
+  </url>
+
+  <url>
+    <loc>https://pmaaofficial.com/%EA%B0%95%EC%82%AC%EC%A7%84</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pmaaofficial.com/%EA%B0%95%EC%82%AC%EC%A7%84"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pmaaofficial.com/%EA%B0%95%EC%82%AC%EC%A7%84/en"/>
+  </url>
+
+  <url>
+    <loc>https://pmaaofficial.com/%EA%B5%AD%EC%A0%9C%ED%98%91%EC%95%BD</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pmaaofficial.com/%EA%B5%AD%EC%A0%9C%ED%98%91%EC%95%BD"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pmaaofficial.com/%EA%B5%AD%EC%A0%9C%ED%98%91%EC%95%BD/en"/>
+  </url>
+
+  <url>
+    <loc>https://pmaaofficial.com/en</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pmaaofficial.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pmaaofficial.com/en"/>
+  </url>
+
+</urlset>
